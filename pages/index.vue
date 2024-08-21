@@ -24,6 +24,14 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import characters from "../data/characters"
+import { useHeadSafe } from "@unhead/vue";
+
+useHeadSafe({
+  title: "Among Us - Icons",
+  meta: [{
+    name: "description", content: "Among Us icons pack"
+  }]
+})
 
 const activeTab = ref("All");
 const keyword = ref("");
