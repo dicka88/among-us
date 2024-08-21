@@ -1,0 +1,30 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@kalimahapps/vue-icons": "^1.7.1",
+    "@nuxt/image": "^1.7.0",
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "@steveyuowo/vue-hot-toast": "^1.2.5",
+    "copy-image-clipboard": "^2.1.2",
+    "eslint": "^9.9.0",
+    "file-saver": "^2.0.5",
+    "nuxt": "^3.12.4",
+    "vue": "latest",
+    "vue-eslint-parser": "^9.4.3"
+  },
+  "devDependencies": {
+    "@types/file-saver": "^2.0.7",
+    "@vue/tsconfig": "^0.5.1",
+    "typescript": "^5.5.4",
+    "vue-tsc": "^2.0.29"
+  }
+}
