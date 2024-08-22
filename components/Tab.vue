@@ -1,6 +1,6 @@
 <template>
   <button class="py-2 px-4 rounded-full border text-gray-500 border-transparent hover:border-gray-300"
-    :class="{ 'text-black !border-gray-300': isActive }" @click="() => click(name)">
+    :class="{ 'text-black !border-gray-300 bg-gray-100': isActive }" @click="() => click(name)">
     {{ name }}
   </button>
 </template>

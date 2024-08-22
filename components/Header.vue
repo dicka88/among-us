@@ -3,8 +3,9 @@
     <div class="bg-black py-12">
       <div class="container mx-auto text-white flex justify-center">
         <div class="flex gap-8 flex-col items-center">
-          <div class="space-y-2 text-center">
-            <img src="/among-us.png" alt="Discover Nuxt 3" class="max-w-[300px]" />
+          <div class="space-y-2 text-center relative shake">
+            <NuxtImg src="/among-us.png" alt="Among Us" class="max-w-[300px]" />
+            <NuxtImg src="/ufo.png" alt="Ufo" class="max-w-[50px] absolute -top-5 left-[29%]" />
             <p class="text-gray-300">Character Sheet Resource</p>
           </div>
           <div class="flex gap-4">

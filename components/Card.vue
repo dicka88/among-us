@@ -1,7 +1,7 @@
 <template>
-  <div class="border border-gray-300 rounded-xl overflow-hidden p-4 relative group flex flex-col">
+  <div class="border border-gray-300 rounded-xl overflow-hidden p-4 relative group flex flex-col shake cursor-pointer">
     <div class="w-full flex-auto flex items-center justify-center">
-      <NuxtImg :src="char.files.png" class="max-w-[120px] lg:max-w-[130px]" />
+      <NuxtImg :src="char.files.png" :key="char.files.png" class="max-w-[120px] lg:max-w-[130px]" />
     </div>
     <div>
       <p>{{ char.name }}</p>
@@ -54,17 +54,17 @@ type Props = {
 const { char } = defineProps<Props>();
 
 const handlePreview = () => { }
+
 const handleClipboard = () => {
   copyImageToClipboard(char.files.png)
     .then(() => {
-      console.log("image copied");
-
       toast.success("Image Copied")
     })
     .catch((e) => {
       console.log('Error: ', e.message)
     })
 }
+
 const handleDownload = () => {
   saveAs(char.files.png, char.files.png.split("/").pop());
 }
