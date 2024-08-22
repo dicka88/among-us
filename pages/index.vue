@@ -25,7 +25,7 @@
     </div>
     <Footer />
     <Modal :title="character?.name" :open="modalPreviewOpen" @close="modalPreviewOpen = false">
-      <NuxtImg v-if="character" :src="character.files.png" class="w-[350px] mx-auto" />
+      <NuxtImg v-if="character" :key="character.files.png" :src="character.files.png" class="w-[350px] mx-auto" />
     </Modal>
   </div>
 </template>
