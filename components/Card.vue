@@ -11,7 +11,7 @@
       <div class="space-y-2">
         <div>
           <button class="hover:bg-black hover:text-white rounded-xl p-2.5 bg-white text-black aspect-square"
-            @click="handlePreview" title="Preview">
+            @click="emit('preview')" title="Preview">
             <FlImageShadow class="text-2xl" />
           </button>
         </div>
@@ -53,7 +53,7 @@ type Props = {
 
 const { char } = defineProps<Props>();
 
-const handlePreview = () => { }
+const emit = defineEmits(["preview"]);
 
 const handleClipboard = () => {
   copyImageToClipboard(char.files.png)

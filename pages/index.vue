@@ -17,19 +17,22 @@
           </div>
           <div v-else class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             <transition-group name="fade-in" mode="out-in">
-              <Card v-for="char in filteredChars" :key="char.files.png" :char="char" />
+              <Card v-for="char in filteredChars" :key="char.files.png" :char="char" @preview="handlePreview(char)" />
             </transition-group>
           </div>
         </div>
       </div>
     </div>
     <Footer />
+    <Modal :title="character?.name" :open="modalPreviewOpen" @close="modalPreviewOpen = false">
+      <NuxtImg v-if="character" :src="character.files.png" class="w-[350px] mx-auto" />
+    </Modal>
   </div>
 </template>
 
 <script setup lang="ts">
 import { computed, ref } from "vue";
-import characters from "../data/characters"
+import characters, { Character } from "../data/characters"
 import { useHeadSafe } from "@unhead/vue";
 
 useHeadSafe({
@@ -41,11 +44,18 @@ useHeadSafe({
 
 const activeTab = ref("All");
 const keyword = ref("");
+const modalPreviewOpen = ref(false);
+const character = ref<Character>()
 
 const tabs = ["All", "Crewmate", "Skin", "Pet"]
 
 const setTab = (tab: string) => {
   activeTab.value = tab;
+}
+
+const handlePreview = (char: Character) => {
+  character.value = char;
+  modalPreviewOpen.value = true;
 }
 
 const chars = computed(() => {
